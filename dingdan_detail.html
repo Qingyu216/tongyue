@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商家</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/area.css">
+
+</head>
+
+<body>
+    <div data-role="page" class="submit_order_page">
+        <div class="online_mall_nav goods_category_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>订单详情</p>
+        </div>
+        <!--内容部分-->
+        <form action="" class="address_content_form">
+            <div data-role="main" class="content notop">
+                <div style="height: 3rem;width: 100%;"></div>
+                <div class="tijiaodingdan">
+                    <div class="order_addr_select">
+                        <div class="new_addr_after">
+                            <ul class="express_detail">
+                                <li class="clearfix">
+                                    <span class="name">收货人：<span>范冰冰</span></span>
+                                    <span class="tel">15662266212</span>
+                                </li>
+                                <li class="address_detail">收货地址： <span>郑州管城区航海东路</span></li>
+                            </ul>
+                            <!--<div class="arrow_right"></div>-->
+                        </div>
+                    </div>
+                    <ul class="submit_li_food">
+                        <li>
+                            <img src="./images/rotation1.png">
+                            <div class="submit_info_text">
+                                <h4>妍丽彩妆新品真彩印有逍遥唇彩</h4>
+                                <p class="submit_gray_darker">真彩引诱小妖精：女王红</p>
+                                <div class="kedejifen_dingdan">可得积分3920</div>
+                            </div>
+                            <div class="submit_info_price">
+                                <h4>￥<span>5555</span></h4>
+                                <p class="submit_gray_darker">x1</p>
+                                <div class="tuikuan"><a href="" data-ajax="false">退款</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="submit_order_total">
+                        <p><span>快递费用</span><span class="submit_order_total_top">¥0.00</span></p>
+                        <p><span>积分</span><span class="submit_order_total_bottom">2390</span></p>
+                        <p><span>实付款</span><span class="submit_order_total_bottom" style="color: #FE482D">￥<span>3999</span></span></p>
+                    </div>
+                    <div class="dingdan_detail_wecat">
+                        <div><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=453748143&amp;site=qq&amp;menu=yes"><img src="./images/41.png"><span>联系卖家</span></a></div>
+                        <div><a href="tel:18912266251" data-ajax="false"><img src="./images/42.png"><span>拨打电话</span></a></div>
+                    </div>
+                    <div class="dingdanhao">
+                        <p>订单编号：<b class="dingdan_num">1939104815784</b> <span class="copy_number" onclick="copyText()">复制</span><textarea id="input" style="opacity: 0;position: absolute;left: 0;">替换的地方</textarea></p>
+                        <p>支付宝交易号：1939104815784</p>
+                        <p>创建时间：2018-3-23 19:38:48</p>
+                        <p>付款时间：2018-3-23 19:38:48</p>
+                        <p>发货时间：2018-3-23 19:38:48</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/LAreaData1.js"></script>
+    <script src="./js/LAreaData2.js"></script>
+    <script src="./js/LArea.js"></script>
+    <script>
+        function copyText() {
+            var text = document.getElementsByClassName("dingdan_num")[0].innerText;
+            var input = document.getElementById("input");
+            input.value = text; // 修改文本框的内容
+            input.select(); // 选中文本
+            document.execCommand("copy"); // 执行浏览器复制命令
+            alert("复制成功");
+        }
+    </script>
+</body>
+
+</html>

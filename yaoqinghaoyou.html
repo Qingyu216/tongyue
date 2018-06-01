@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?d69321757dcfbfbe09dbddd4dca87b28";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+    <div data-role="page" class="wraper">
+        <div class="online_mall_nav zaixianchongzhi_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>邀请好友</p>
+            <a href="./guizeshuoming.html">
+                <div>规则说明</div>
+            </a>
+        </div>
+        <div data-role="main" class="content notop">
+            <div style="height: 3rem;width: 100%;"></div>
+            <div class="yaoqinghaoyou">
+                <img src="./images/6.png">
+                <div class="fenxiang_btn" id="fenxiang_btn">
+                    <img src="./images/7.png">
+                </div>
+            </div>
+        </div>
+        <div class="mark_down"></div>
+        <div class="fenxiang_Popup">
+            <div class="fenxiang_PopupCon bdsharebuttonbox">
+                <ul>
+                    <li> <a title="分享到微信" href="#" class="bds_weixin" onclick="call('wechatFriend')">
+                        </a>
+                        <p>微信好友</p>
+                    </li>
+                    <li> <a title="分享到微信" href="#" class="bds_pengyouquan" onclick="call('wechatTimeline')">
+                        </a>
+                        <p>微信朋友圈</p>
+                    </li>
+                    <li> <a title="分享到QQ好友" href="#" class="bds_sqq" onclick="call('qqFriend')"></a>
+                        <p>QQ好友</p>
+                    </li>
+                    <li> <a title="分享到QQ空间" href="#" class="bds_qzone" onclick="call('qZone')"></a>
+                        <p>QQ空间</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="fenxiang_PopupCancal">取消</div>
+        </div>
+        <div id="footer" class="footer">
+            <a href="./index.html" data-ajax="false" class="home">
+                <span></span>
+                <p>首页</p>
+            </a>
+            <a href="./online_mall.html" data-ajax="false" class="online_mall">
+                <span></span>
+                <p>线上商城</p>
+            </a>
+            <a href="./hongbao.html" data-ajax="false" class="red_packet">
+                <span></span>
+                <p>红包</p>
+            </a>
+            <a href="./cart_food.html" data-ajax="false" class="shop_cart">
+                <span></span>
+                <p>购物车</p>
+            </a>
+            <a href="./my.html" data-ajax="false" class="my active">
+                <span></span>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script type="text/javascript" src="./js/NativeShare.js"></script>
+    <script>
+        $(function() {
+            $('#fenxiang_btn').click(function() {
+                $('.fenxiang_Popup').show();
+                $('.selectionStyle_alert').show();
+                $('body').css({
+                    'height': '100%',
+                    'overflow': 'hidden'
+                });
+                $('.mark_down').show();
+            });
+
+            $('.fenxiang_PopupCancal').click(function() {
+                $(this).parent('.fenxiang_Popup').hide();
+                $('.selectionStyle_alert').show();
+                $('body').css({
+                    'height': 'auto',
+                    'overflow': 'auto'
+                });
+                $('.mark_down').hide();
+            });
+        });
+
+
+
+        var nativeShare = new NativeShare();
+        var shareData = {
+            title: '郑州同悦电商',
+            desc: '郑州同悦电商郑州同悦电商郑州同悦电商郑州同悦电商郑州同悦电商',
+            // 如果是微信该link的域名必须要在微信后台配置的安全域名之内的。
+            link: 'http://www.baidu.com',
+            icon: '',
+            // 不要过于依赖以下两个回调，很多浏览器是不支持的
+            success: function() {
+                alert('success')
+            },
+            fail: function() {
+                alert('fail')
+            }
+        };
+        nativeShare.setShareData(shareData);
+
+        function call(command) {
+            try {
+                nativeShare.call(command);
+            } catch (err) {
+                // 如果不支持，你可以在这里做降级处理
+                // alert(err.message)
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/calender.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body style="height: 100%;">
+    <div data-role="page" class="wraper">
+        <div data-role="main" class="content notop" style="height: 100%;margin-bottom: 0rem;">
+            <div class="hongbao_box">
+                <div class="hongbao_top">
+                    <a href="./my_red.html" data-ajax="flase">红包</a>
+                    <a href="javascript:;" data-ajax="flase" class="chai_hongbao">拆红包说明</a>
+                </div>
+                <div class="linghongbao_btn"></div>
+                <style>
+                    .qiandao-con {
+                        margin: 90% auto 5rem auto;
+                        padding-bottom: 5rem;
+                        width: 100%;
+                        height: 400px;
+                        background-size: 100%;
+                        background: #F67C23;
+                    }
+
+                    .time_content {
+                        margin: 0 auto;
+                        height: 100% !important;
+                    }
+
+
+                    /*
+                    .calendar-hd {
+                        background: #E23703;
+                        position: relative;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
+
+                    .calendar-ct {
+                        background: white;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+
+                    .calendar.calendar-d,
+                    .calendar.calendar-m {
+                        margin: 0 auto;
+                    }
+
+                    .calendar-arrow {
+                        width: 80% !important;
+                        margin-right: 10% !important;
+                    }
+
+                    .calendar-display {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        margin-top: -0.6rem;
+                        margin-left: -2.2rem;
+                        font-size: 1rem !important;
+                        color: #FCD739 !important;
+                    }
+
+                    .calendar-display .m {
+                        color: #FCD739 !important;
+                    }
+
+                    .calendar-display:hover,
+                    .calendar-arrow span:hover {
+                        color: white !important;
+                    }
+*/
+                </style>
+                <div class="qiandao-con clear">
+                    <div class="time_content">
+                        <div id="calendar" class="calendar"></div>
+                    </div>
+                </div>
+                <!--
+                <div class="qiandao-con clear">
+                    <div class="qiandao-left">
+                        <div class="qiandao-left-top clear">
+                            <div class="current-date">2016年1月6日</div>
+                        </div>
+                        <div class="qiandao-main" id="js-qiandao-main">
+                            <ul class="qiandao-list" id="js-qiandao-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+-->
+            </div>
+            <div class="shuoming_chaiBox">
+                <div class="shuoming_chai">
+                    <div class="shuoming_chaiCon">每日凌晨5点之前，平台根据消费指数向积分持有会员自动发放不定额红包。会员当日首次登陆点击拆红包按钮可进行不定额度的领取红包。</div>
+                    <div class="cancal"><img src="./images/39.png"></div>
+                </div>
+            </div>
+
+            <div class="huode_hongbaoBOx">
+                <div class="huode_hongbao">
+                    <div class="huode_hongbaoCon">恭喜获得112元红包，你可以在我的红包里面查看领取的所有红包总额。</div>
+                    <div class="cancal"><img src="./images/39.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mark_down"></div>
+        <div id="footer" class="footer">
+            <a href="./index.html" data-ajax="false" class="home">
+                <span></span>
+                <p>首页</p>
+            </a>
+            <a href="./online_mall.html" data-ajax="false" class="online_mall">
+                <span></span>
+                <p>线上商城</p>
+            </a>
+            <a href="./hongbao.html" data-ajax="false" class="red_packet">
+                <span></span>
+                <p>红包</p>
+            </a>
+            <a href="./cart_food.html" data-ajax="false" class="shop_cart">
+                <span></span>
+                <p>购物车</p>
+            </a>
+            <a href="./my.html" data-ajax="false" class="my active">
+                <span></span>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/calendar.js"></script>
+    <script>
+        $(function() {
+            //            var date = new Date();
+            //            var year = date.getFullYear();
+            //            var month = date.getMonth() + 1;
+            //            var day = date.getDate();
+            //            $(".current-date").text(year + "年" + month + "月" + day + "日");
+            $('.chai_hongbao').click(function() {
+                $('.shuoming_chaiBox').show();
+                $('.mark_down').show();
+                $('body').css({
+                    'overflow': 'hidden',
+                    'height': '100%'
+                });
+            });
+            $('.shuoming_chai .cancal,.huode_hongbao .cancal').click(function() {
+                $(this).parent().parent().hide();
+                $('.mark_down').hide();
+                $('body').css({
+                    'overflow': 'auto',
+                    'height': 'auto'
+                });
+            });
+            $('.linghongbao_btn').click(function() {
+                $('.huode_hongbaoBOx').show();
+                $('.mark_down').show();
+                $('body').css({
+                    'overflow': 'hidden',
+                    'height': '100%'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

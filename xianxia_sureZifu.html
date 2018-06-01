@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body style="height: 100%;">
+    <div data-role="page" class="wraper">
+        <div class="online_mall_nav sousuoye_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>确认支付</p>
+        </div>
+        <div data-role="main" class="content notop">
+            <div style="height: 3rem;width: 100%;"></div>
+            <form action="">
+                <div class="xianxia_sureZifu_box">
+                    <div class="amount_payable">
+                        应付金额<span><i>￥</i>444</span>
+                    </div>
+                    <div class="red_available">
+                        <span>红包可支付：￥0.00</span>
+                        <div id="div1" class="close1">
+                            <div id="div2" class="close2"></div>
+                        </div>
+                    </div>
+                    <div class="chongzhifangshi xianxia_sureZifu_way">
+                        <ul>
+                            <li>
+                                <div class="Img"><img src="./images/cz_Pay treasure@2x.png"></div>
+                                <div class="kouhao">
+                                    <p>支付宝</p>
+<!--                                    <p>因为信任，所以简单</p>-->
+                                </div>
+                                <div class="xuanzhe"></div>
+                            </li>
+                            <li>
+                                <div class="Img"><img src="./images/cz_quick payment@2x.png"></div>
+                                <div class="kouhao">
+                                    <p>快捷支付（开联通）</p>
+<!--                                    <p>快捷支付，即时到账</p>-->
+                                </div>
+                                <div class="xuanzhe"></div>
+                            </li>
+                            <li>
+                                <div class="Img"><img src="./images/cz_tonly@2x.png"></div>
+                                <div class="kouhao">
+                                    <p>通联</p>
+<!--                                    <p>快捷支付，流畅支付</p>-->
+                                </div>
+                                <div class="xuanzhe"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="xianxia_sureZifu_btn">
+                        <input type="submit" value="确认支付（还需支付444）">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        $(function() {
+            var div2 = document.getElementById("div2");
+            var div1 = document.getElementById("div1");
+            div1.onclick = function() {
+                div1.className = (div1.className == "close1") ? "open1" : "close1";
+                div2.className = (div2.className == "close2") ? "open2" : "close2";
+            }
+            
+            //选择支付方式
+            $('.xianxia_sureZifu_way ul li .xuanzhe').click(function(){
+                $(this).css('backgroundImage','url(./images/duihao.png)'); $(this).parent().siblings('li').find('.xuanzhe').css('backgroundImage','url(./images/bg_duihao.png)');
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div data-role="page" class="wraper">
+        <div class="online_mall_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>修改让利折扣</p>
+        </div>
+        <div data-role="main">
+            <div style="height: 3rem;width: 100%;"></div>
+            <div class="store_discounts_box">
+                <div class="store_discounts">
+                    <h5>同悦电子商务</h5>
+                    <p>当前折扣：<span>9.9</span>折</p>
+                </div>
+                <div class="zhekou_box">
+                    <p><span>手动设置折扣</span><input type="text" value="9.00"><span>折</span></p>
+                    <div class="progress_box">
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                            <div class="huadong"></div>
+                        </div>
+                        <div class="xianshi_zhekou">
+                            <span class="min"><i>0.00</i>折</span>
+                            <span class="max"><i>9.00</i>折</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhekou_shuoming">
+                <h5>折扣说明</h5>
+                <p>设置好折扣之后，根据商家选择的二维码类型，消费者扫码完成后可获得相应的积分。例：商家设置折扣为8折，消费者扫描商家赠送的积分二维码，支付成功后，将获得20积分，商家同时获得20元，加2积分。</p>
+            </div>
+            <div class="zhekou_button">
+                <input type="submit" value="确定修改折扣为9.9折">
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function() {
+            $('boby').click(function() {
+                $()
+            });
+            var div1 = document.getElementsByClassName('progress')[0];
+            var div2 = document.getElementsByClassName('huadong')[0];
+            var progress_bar = document.getElementsByClassName('progress-bar')[0];
+            div2.addEventListener('touchmove', function(event) {
+                event.preventDefault();
+                var styles = window.getComputedStyle(div1, null);
+                var width = styles.width; //灰色块的长度，用于计算红色块最大滑动的距离 
+                if (event.targetTouches.length == 1) {
+                    var touch = event.targetTouches[0];
+                    //计算红色块的left值，pageX是相对于整个页面的坐标，减去15（红色块长度的一半）是为了让鼠标点显示在中间，可以更改值看看效果，如果灰色块不是紧挨着屏幕，那还需要计算灰色块距离左屏幕的距离，应为pageX！！！  
+                    moveleft = touch.pageX - 15;
+                    if (moveleft <= 0) { //红色块的left值最小是0；  
+                        moveleft = 0;
+                    };
+                    if (moveleft >= parseInt(width)) { ////红色块的left值最小是灰色块的width减去红色块的width；  
+                        moveleft = parseInt(width);
+                    }
+                    div2.style.left = moveleft + "px"; //最后把left值附上。  
+                    progress_bar.style.width = moveleft + "px";
+                    $('.xianshi_zhekou .max i').text((moveleft / parseFloat(width)).toFixed(2));
+                    $('.zhekou_box> p > input').attr('value', (moveleft / parseFloat(width)).toFixed(2))
+                };
+            });
+        })
+    </script>
+</body>
+
+</html>

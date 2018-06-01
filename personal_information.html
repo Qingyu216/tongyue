@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div data-role="page" class="wraper">
+        <div class="online_mall_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>个人信息</p>
+        </div>
+        <div data-role="main" class="content notop">
+            <div style="height: 3rem;width: 100%;"></div>
+            <div class="personal_information_Box">
+                <div class="personal_information_Con">
+                    <ul>
+                        <a href="javascript:;" data-ajax="flase">
+                            <li>
+                                <span>我的头像</span>
+                                <div>
+                                    <img src="./images/QQ.png" class="piaoju">
+                                    <input type="file" accept="image/*" onchange="previewFile()" />
+                                </div>
+<!--                                <img src="./images/my_icon_Recommend@2x.png">-->
+                            </li>
+                        </a>
+                        <a href="./nickname_change.html" data-ajax="flase">
+                            <li>
+                                <span>昵称</span>
+                                <span>哈哈</span>
+                                <img src="./images/my_icon_Recommend@2x.png">
+                            </li>
+                        </a>
+                        <a href="javascript:;" data-ajax="flase">
+                            <li>
+                                <span>会员级别</span>
+                                <b>普通会员</b>
+                            </li>
+                        </a>
+                        <a href="javascript:;" data-ajax="flase">
+                            <li>
+                                <span>绑定手机号</span>
+                                <b>15839825835</b>
+                            </li>
+                        </a>
+                        <a href="./my_addr.html" data-ajax="flase">
+                            <li>
+                                <span>我的地址</span>
+                                <img src="./images/my_icon_Recommend@2x.png">
+                            </li>
+                        </a>
+                        <a href="./zhanghaoanquan.html" data-ajax="flase">
+                            <li>
+                                <span>账号安全</span>
+                                <img src="./images/my_icon_Recommend@2x.png">
+                            </li>
+                        </a>
+                        <a href="javascript:;" data-ajax="flase">
+                            <li>
+                                <span>我的推荐人</span>
+                                <b>15561232502</b>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="log_out">
+                <input type="button" value="退出登录" />
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        function previewFile() {
+            var preview = document.querySelector('.piaoju');
+            var file = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+                preview.style.display = 'block';
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

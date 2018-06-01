@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body style="height: 100%;">
+    <div data-role="page" class="wraper">
+        <div data-role="main" style="height: 100%;">
+            <div class="login_box">
+                <form action="">
+                    <img src="./images/cancal.png" class="close">
+                    <div class="login_way">
+                        <img src="./images/cz_tonly@2x.png" class="company_logo">
+                        <div class="login_wayPhone">
+                            <img src="./images/70.png">
+                            <input type="text" name="phone" placeholder="请输入您的手机号">
+                        </div>
+                        <div class="login_wayPwd">
+                            <img src="./images/71.png">
+                            <input type="text" name="password" placeholder="请输入您的密码">
+                        </div>
+                        <input type="checkbox"><span class="jizhumima">记住密码</span>
+                    </div>
+                    <div class="login_btn">
+                        <input type="submit" value="登录">
+                        <input type="button" value="快捷登录">
+                    </div>
+                    <div class="pwd_forget"><span>还没有账号？</span><a href="./registered.html" data-ajax="false">快速注册</a><a href="./xiugai_bangding.html" class="forget_a" data-ajax="false">忘记密码？</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        $(function(){
+            $('.login_box .close').click(function(){
+                setTimeout("history.go(-1)",100)
+            })
+        })
+    </script>
+</body>
+
+</html>

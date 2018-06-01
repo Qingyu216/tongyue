@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="main">
+            <div class="online_mall_nav goods_category_nav">
+                <div class="online_mall_navLeft">
+                    <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+                </div>
+                <p>领红包</p>
+            </div>
+            <div class="add_bankCard_Box">
+                <div class="add_bankCard_Con">
+                    <div style="height: 3rem;"></div>
+                    <form action="">
+                        <div class="select_card">
+                            <a href="./select_card.html" data-ajax="false">
+                                <div class="select_cardImg">
+                                    <img src="./images/50.png">
+                                </div>
+                                <div class="select_cardBank">
+                                    <h4>浦发银行</h4>
+                                    <p>张三</p>
+                                    <p>尾号6499 储蓄卡</p>
+                                </div>
+                                <div class="select_cardArrow">
+                                    <img src="./images/my_icon_Recommend@2x.png">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="withdrawal_amount">
+                            <h5>提现金额</h5>
+                            <div class="amount_tixian">
+                                <span>￥</span>
+                                <input type="number" oninput="if(value.length>12)value=value.slice(0,10)">
+                            </div>
+                            <p class="amount_sum">可用余额<i>1290</i>元<span class="all_withdrawal">全部提现</span></p>
+                        </div>
+                        <div class="tixian_btn"><input type="submit" value="领红包"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.all_withdrawal').click(function(){
+               $('.amount_tixian input').val(parseFloat($(this).siblings('i').text()));
+            })
+        })
+    </script>
+</body>
+
+</html>

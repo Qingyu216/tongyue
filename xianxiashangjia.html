@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div data-role="page" class="wraper">
+        <div class="online_mall_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <div class="online_mall_navRight">
+                <div class="xianxiashangjia_seach">
+                    <input type="text" placeholder="请输入搜索内容" class="search">
+                    <input type="submit" class="sousuo" value="搜索">
+                </div>
+            </div>
+            <p>线下商家</p>
+        </div>
+        <div data-role="main" class="content notop">
+            <div style="height: 3rem;width: 100%;"></div>
+            <div class="xianxia_classify">
+<!--
+                <div class="classify_list eller_select">
+                    商家分类
+                    <img src="./images/xiangxia_1.png" class="arrow">
+                </div>
+-->
+                <div class="classify_list area_select">
+                    区域选择
+                    <img src="./images/xiangxia_1.png" class="arrow">
+                </div>
+            </div>
+
+            <div class="near_merchantCon" id="xiangxianshangjia_Con">
+                <ul>
+                    <a href="./xianxia_detail.html" data-ajax="false">
+                        <li>
+                            <div class="near_img"><img src="./images/rotation1.png"></div>
+                            <div class="near_content">
+                                <p class="com_name">朵朵科技
+                                    <span>让利15%</span>
+                                </p>
+                                <p class="color">63人光临
+                                    <span>
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                </span>
+                                </p>
+                                <div class="near_distance">
+                                    <p>航海东路起航大厦航海东路起航大厦航海东路起航大厦航海东路起航大厦</p>
+                                    <span>73m</span>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="./xianxia_detail.html" data-ajax="false">
+                        <li>
+                            <div class="near_img"><img src="./images/rotation1.png"></div>
+                            <div class="near_content">
+                                <p class="com_name">朵朵科技
+                                    <span>让利15%</span>
+                                </p>
+                                <p class="color">63人光临
+                                    <span>
+                                        <img src="./images/star.png">
+                                        <img src="./images/star.png">
+                                        <img src="./images/star.png">
+                                        <img src="./images/star.png">
+                                        <img src="./images/star.png">
+                                    </span>
+                                </p>
+                                <div class="near_distance">
+                                    <p>航海东路起航大厦航海东路起航大厦航海东路起航大厦航海东路起航大厦</p>
+                                    <span>73m</span>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="./xianxia_detail.html" data-ajax="false">
+                        <li>
+                            <div class="near_img"><img src="./images/rotation1.png"></div>
+                            <div class="near_content">
+                                <p class="com_name">朵朵科技
+                                    <span>让利15%</span>
+                                </p>
+                                <p class="color">63人光临
+                                    <span>
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                    <img src="./images/star.png">
+                                </span>
+                                </p>
+                                <div class="near_distance">
+                                    <p>航海东路起航大厦航海东路起航大厦航海东路起航大厦航海东路起航大厦</p>
+                                    <span>73m</span>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+<!--
+        <div class="alert_eller">
+            <div class="eller_zhonglei">
+                <ul>
+                    <li>全部行业</li>
+                    <li class="Selected">美食</li>
+                    <li>休闲娱乐</li>
+                    <li>酒店住宿</li>
+                    <li>全部行业</li>
+                    <li>美食</li>
+                    <li>休闲娱乐</li>
+                    <li>酒店住宿</li>
+                    <li>全部行业</li>
+                    <li>美食</li>
+                    <li>休闲娱乐</li>
+                    <li>酒店住宿</li>
+                </ul>
+            </div>
+            <div class="eller_product">
+                <ul>
+                    <li>全部美食</li>
+                    <li>火锅</li>
+                    <li>自助餐</li>
+                    <li>西餐</li>
+                </ul>
+            </div>
+        </div>
+-->
+        <div class="alert_region">
+            <form action="">
+                <ul>
+                    <li class="region_xuanze">全部</li>
+                    <li>金水区</li>
+                    <li>邙山区</li>
+                    <li>二七区</li>
+                    <li>管城区</li>
+                    <li>中原区</li>
+                    <li>上街区</li>
+                    <li>郑东新区</li>
+                </ul>
+            </form>
+        </div>
+        <div id="footer" class="footer">
+            <a href="./index.html" data-ajax="false" class="home">
+                <span></span>
+                <p>首页</p>
+            </a>
+            <a href="./online_mall.html" data-ajax="false" class="online_mall">
+                <span></span>
+                <p>线上商城</p>
+            </a>
+            <a href="./hongbao.html" data-ajax="false" class="red_packet">
+                <span></span>
+                <p>红包</p>
+            </a>
+            <a href="./cart_food.html" data-ajax="false" class="shop_cart">
+                <span></span>
+                <p>购物车</p>
+            </a>
+            <a href="./my.html" data-ajax="false" class="my">
+                <span></span>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        $(function() {
+            //商家分类
+//            $('.eller_select').click(function() {
+//                if ($('.alert_eller').css('display') == 'none') {
+//                    $('.alert_eller').css('display', 'block');
+//                    $(this).addClass('active');
+//                    if ($('.alert_region').css('display') == 'block') {
+//                        $('.alert_region').css('display', 'none');
+//                        $('.area_select').removeClass('active');
+//                    }
+//                } else {
+//                    $('.alert_eller').css('display', 'none');
+//                    $(this).removeClass('active');
+//                }
+//            });
+
+            //区域选择
+            $('.area_select').click(function() {
+                if ($('.alert_region').css('display') == 'none') {
+                    $('.alert_region').css('display', 'block');
+                    $('.mark_down').show();
+                    $(this).addClass('active');
+                    if ($('.alert_eller').css('display') == 'block') {
+                        $('.alert_eller').css('display', 'none');
+                        $('.eller_select').removeClass('active');
+                    }
+                } else {
+                    $('.alert_region').css('display', 'none');
+                    $(this).removeClass('active');
+                }
+            });
+
+            $('.alert_region ul li').click(function() {
+                if ($(this).hasClass('region_xuanze')) {
+                    $(this).addClass('region_xuanze').siblings('li').removeClass('region_xuanze');
+                } else {
+                    $(this).addClass('region_xuanze').siblings('li').removeClass('region_xuanze');
+                }
+                var url = "",
+                    data = {region_xuanze : $('.region_xuanze').text()}
+                $.ajax({
+                    url: url,
+                    type: 'post',
+                    data:data,
+                    dataType: 'json',
+                    success:function(data){
+                        
+                    }
+                })
+            }); 
+
+//            $('.eller_zhonglei ul li').click(function() {
+//                $(this).addClass('Selected').siblings('li').removeClass('Selected');
+//            });
+
+        });
+
+    </script>
+</body>
+
+</html>

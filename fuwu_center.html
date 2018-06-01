@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div data-role="page" class="wraper">
+        <div class="online_mall_nav goods_category_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>服务中心</p>
+        </div>
+        <div data-role="main" class="content notop">
+            <div class="fuwu_center_box">
+                <div style="height: 3rem;width: 100%;"></div>
+                <div class="fuwu_center_Con">
+                    <p>服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明服务说明</p>
+                    <form action="">
+                        <div class="info">
+                            <h3>请选择申请服务中心的区域</h3>
+                            <div>
+                                <select id="s_province" name="s_province"></select>
+                                <select id="s_city" name="s_city"></select>
+                                <select id="s_county" name="s_county"></select>
+                            </div>
+                            <p>您申请的服务区域为<span>河南省郑州市管城区</span></p>
+                            <div id="show"></div>
+                        </div>
+                        <div class="diqu_button">
+                            <input type="submit" value="申请提交">
+                        </div>
+                    </form>
+                    <div class="tijiao_fankui">
+                        <h4>申请记录</h4>
+                        <table cellspacing="0">
+                            <tr>
+                                <th>申请人</th>
+                                <th>申请区域</th>
+                                <th>申请时间</th>
+                                <th>状态</th>
+                            </tr>
+                            <tr>
+                                <td>张三</td>
+                                <td>河南省郑州市管城区</td>
+                                <td>2018-03-20</td>
+                                <td>审核中</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <a href="./index.html" data-ajax="false" class="home">
+                <span></span>
+                <p>首页</p>
+            </a>
+            <a href="./online_mall.html" data-ajax="false" class="online_mall">
+                <span></span>
+                <p>线上商城</p>
+            </a>
+            <a href="./hongbao.html" data-ajax="false" class="red_packet">
+                <span></span>
+                <p>红包</p>
+            </a>
+            <a href="./cart_food.html" data-ajax="false" class="shop_cart">
+                <span></span>
+                <p>购物车</p>
+            </a>
+            <a href="./my.html" data-ajax="false" class="my active">
+                <span></span>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/area.js"></script>
+    <script>
+        _init_area();
+        var Gid = document.getElementById;
+        var showArea = function() {
+            Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +
+                Gid('s_city').value + " - 县/区" +
+                Gid('s_county').value + "</h3>"
+        }
+        Gid('s_county').setAttribute('onchange', 'showArea()');
+    </script>
+</body>
+
+</html>

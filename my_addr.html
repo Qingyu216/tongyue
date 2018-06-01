@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div data-role="page" class="wraper">
+        <div class="online_mall_nav goods_category_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>管理收货地址</p>
+        </div>
+        <div data-role="main" class="content notop">
+            <div class="my_addr_Box">
+                <div style="height: 3rem;width: 100%;"></div>
+                <div class="add_newAddr">
+                    <a href="./add_newAddr.html"><span>添加新的收货地址</span></a>
+                </div>
+                <h4>您使用过的收货地址</h4>
+                <div class="add_addrCon">
+                    <ul>
+                        <li>
+                            <img src="./images/gwc_icon_round@2x.png" class="xuanze">
+                            <div class="name_address">
+                                <p><span>名字</span><i>18912322323</i></p>
+                                <p>[默认]河南省郑州市管城回族区起航大厦未来路二楼</p>
+                            </div>
+                            <div class="edit">
+                                <img src="./images/delete.png" onclick="delete_btn(this)">
+                                <a href="./add_newAddr.html"><img src="./images/27.png"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/gwc_icon_round@2x.png" class="xuanze">
+                            <div class="name_address">
+                                <p><span>名字</span><i>18912322323</i></p>
+                                <p>河南省郑州市管城回族区起航大厦未来路二楼</p>
+                            </div>
+                            <div class="edit">
+                                <img src="./images/delete.png" onclick="delete_btn(this)">
+                                <a href="./add_newAddr.html"><img src="./images/27.png"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <a href="./index.html" data-ajax="false" class="home">
+                <span></span>
+                <p>首页</p>
+            </a>
+            <a href="./online_mall.html" data-ajax="false" class="online_mall">
+                <span></span>
+                <p>线上商城</p>
+            </a>
+            <a href="./hongbao.html" data-ajax="false" class="red_packet">
+                <span></span>
+                <p>红包</p>
+            </a>
+            <a href="./cart_food.html" data-ajax="false" class="shop_cart">
+                <span></span>
+                <p>购物车</p>
+            </a>
+            <a href="./my.html" data-ajax="false" class="my active">
+                <span></span>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        function delete_btn(_this) {
+            if (confirm("确认删除吗")) {
+                $(_this).parent().parent().hide();
+            } else {
+                return;
+            }
+
+        }
+        //地址选择
+        $('.add_addrCon ul li .xuanze').click(function() {
+            $(this).attr('src', './images/gwc_icon_round_pre@2x.png').parent('li').addClass('selected').siblings('li').removeClass('selected').children('img.xuanze').attr('src', './images/gwc_icon_round@2x.png');
+            alert($(this).parent('li').find('.name_address p:nth-child(1) span').text());
+            alert($(this).parent('li').find('.name_address p:nth-child(1) i').text());
+            alert($(this).parent('li').find('.name_address p:nth-child(2)').text());
+        });
+    </script>
+</body>
+
+</html>

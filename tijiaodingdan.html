@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>B•Buff能力沙拉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/area.css">
+
+</head>
+
+<body>
+    <div data-role="page" class="submit_order_page">
+        <div class="online_mall_nav goods_category_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/xiangzuo.png"></a>
+            </div>
+            <p>确认提交订单</p>
+        </div>
+        <!--内容部分-->
+        <form action="" class="address_content_form">
+            <div data-role="main" class="content notop">
+                <div style="height: 3rem;width: 100%;"></div>
+                <div class="tijiaodingdan">
+                    <div class="order_addr_select">
+                        <div class="new_addr_after">
+                            <ul class="express_detail">
+                                <li class="clearfix">
+                                    <span class="name">收货人：<span>xxx</span></span>
+                                    <span class="tel">15662266212</span>
+                                </li>
+                                <li class="address_detail">收货地址： <span>郑州管城区航海东路</span></li>
+                            </ul>
+                            <div class="arrow_right"></div>
+                        </div>
+                    </div>
+                    <ul class="submit_li_food">
+                        <li>
+                            <img src="./images/rotation1.png">
+                            <div class="submit_info_text">
+                                <h4>妍丽彩妆新品真彩印有逍遥唇彩</h4>
+                                <p class="submit_gray_darker">真彩引诱小妖精：女王红</p>
+                            </div>
+                            <div class="submit_info_price">
+                                <h4>￥55.00</h4>
+                                <p class="submit_gray_darker">x1</p>
+                            </div>
+                        </li>
+                        <div style="height: 0.5rem;background:#F8F8F8;"></div>
+                        <li>
+                            <img src="./images/rotation2.png">
+                            <div class="submit_info_text">
+                                <h4>卡姿兰BB霜顺丰单号是</h4>
+                                <p class="submit_gray_darker">卡姿兰气垫BB：雅典自然色</p>
+                            </div>
+                            <div class="submit_info_price">
+                                <h4>￥255</h4>
+                                <p class="submit_gray_darker">x2</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="submit_total">
+                        <span class="order_message">合计</span>
+                        <div class="submit_total_num"> ¥335.00 <span> +0积分</span>
+
+                        </div>
+                    </div>
+                    <div class="submit_total">
+                        <span class="order_message">优惠</span>
+                        <div class="coupons_collect">使用优惠券&nbsp;&nbsp;<span>&gt;</span></div>
+                    </div>
+                    <div class="submit_order_total">
+                        <p><span>商品金额</span><span class="submit_order_total_top">¥335.00</span></p>
+                        <p><span>运费</span><span class="submit_order_total_bottom">+ ¥0.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <!--脚部内容-->
+            <div id="footer" class="footer submit_price_btn">
+                <div>
+                    <span>合计：</span><span>¥335</span>
+                    <span>可得积分420</span>
+                    <input type="button" value="提交订单" class="commit_bill_btn">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="address_select" style="display: none;">
+        <div data-role="main" class="content notop">
+            <div class="my_addr_Box">
+                <div class="add_newAddr">
+                    <a href="javascript:;" data-ajax="false"><span>添加新的收货地址</span></a>
+                </div>
+                <h4>您使用过的收货地址</h4>
+                <div class="add_addrCon">
+                    <ul>
+                        <li>
+                            <img src="./images/gwc_icon_round@2x.png" class="xuanze">
+                            <div class="name_address">
+                                <p><span>名字</span><i>18912322323</i></p>
+                                <p>河南省郑州市管城回族区起航大厦未来路二楼</p>
+                            </div>
+                            <div class="edit">
+                                <img src="./images/delete.png" onclick="delete_btn(this)">
+                                <a href="javascript:;" data-ajax="false"><img src="./images/27.png"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/gwc_icon_round@2x.png" class="xuanze">
+                            <div class="name_address">
+                                <p><span>名字</span><i>18912322323</i></p>
+                                <p>河南省郑州市管城回族区起航大厦未来路二楼</p>
+                            </div>
+                            <div class="edit">
+                                <img src="./images/delete.png" onclick="delete_btn(this)">
+                                <a href="javascript:;" data-ajax="false"><img src="./images/27.png"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="address_add">
+        <div data-role="main" class="content notop" style="height: 100%;">
+            <div class="add_newAddr_box">
+                <form action="">
+                    <div class="">
+                        <table cellspacing='0'>
+                            <tr>
+                                <td>姓名</td>
+                                <td><input type="text" placeholder="请输入姓名"></td>
+                            </tr>
+                            <tr>
+                                <td>电话</td>
+                                <td><input type="text" placeholder="请输入电话"></td>
+                            </tr>
+                            <tr>
+                                <td>定位</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>地址</td>
+                                <td><input type="text" placeholder="请输入具体位置信息，如XX楼XX室"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <img src="./images/bg_duihao.png"><span>设置成默认收货地址</span>
+                    </div>
+                    <div class="Preservation_btn">
+                        <input type="submit" value="保存">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/LAreaData1.js"></script>
+    <script src="./js/LAreaData2.js"></script>
+    <script src="./js/LArea.js"></script>
+    <script>
+        $(function() {
+            //点击地址进入地址选择
+            $('.order_addr_select>div').click(function() {
+                $('.address_select').show();
+                $('.submit_order_page').hide();
+            });
+
+            //地址选择
+            $('.add_addrCon ul li .xuanze').click(function() {
+                $(this).attr('src', './images/gwc_icon_round_pre@2x.png').parent('li').addClass('selected').siblings('li').removeClass('selected').children('img.xuanze').attr('src', './images/gwc_icon_round@2x.png');
+                $('.express_detail li span.name span').text($(this).parent('li').find('.name_address p:nth-child(1) span').text());
+                $('.express_detail .clearfix .tel').text($(this).parent('li').find('.name_address p:nth-child(1) i').text());
+                $('.address_detail span').text($(this).parent('li').find('.name_address p:nth-child(2)').text());
+                $('.address_select').hide();
+                $('.submit_order_page').show();
+            });
+
+            //新增地址 
+            $('.add_newAddr a,.add_addrCon .edit a').click(function() {
+                $('.address_add').show();
+                $('.address_select').hide();
+                $('.submit_order_page').hide();
+            })
+        });
+
+        function delete_btn(_this) {
+            $(_this).parent().parent().hide();
+        }
+    </script>
+</body>
+
+</html>

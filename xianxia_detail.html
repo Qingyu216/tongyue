@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xIjLwtsSmWjaghddaif5WvKHkH7I4Z8G"></script>
+</head>
+
+<body>
+    <div data-role="page" class="wraper">
+        <div class="shangpin_detail_nav">
+            <div class="online_mall_navLeft">
+                <a href="JavaScript:history.back(-1)" data-ajax="false"><img src="./images/spxq_icon_return@2x.png"></a>
+            </div>
+        </div>
+        <div data-role="main" class="content notop" style="margin-bottom: 0rem;">
+            <div class="xianxia_detail_top">
+                <img src="./images/rotation3.png">
+            </div>
+            <div class="xianxia_detail_box">
+                <h2>山中鸡叫-山泉鸡</h2>
+                <ul class="yingye_Time">
+                    <li>
+                        <div id="daohang_dingwei">郑花路59号院二十一世纪湖3号楼2501</div>
+                        <div><a href="tel:18915612265" data-ajax="false"><img src="./images/29.png"></a></div>
+                    </li>
+                    <li>
+                        <div>营业时间08:00-22:00</div>
+                    </li>
+                    <li>
+                        <div>线上店铺：山中鸡叫-山泉鸡养殖场</div>
+                        <div><a href="./dianpu.html" data-ajax="false"><span>进入</span><span><img src="./images/my_icon_Recommend@2x.png"></span></a></div>
+                    </li>
+                </ul>
+                <p class="yiYou_peple">已有<span>87</span>人光临本店</p>
+                <div class="maidan_btn"><a href="./xianxia_zhifu.html" data-ajax="false">买单</a></div>
+            </div>
+            <div class="overall_evaluation">
+                <p><span>总体评价</span><span><img src="./images/star.png"><img src="./images/star.png"><img src="./images/star.png"><img src="./images/star.png"><i>5.0分</i></span></p>
+            </div>
+            <div class="shangjia_jianjie">
+                <h4>商家简介</h4>
+                <p>商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介</p>
+                <p>商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介</p>
+                <p>商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介</p>
+                <p>商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介商家简介</p>
+            </div>
+        </div>
+    </div>
+    <div id="allmap"></div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script>
+        $('#daohang_dingwei').click(function() {
+            var dangqian_dizi=$(this).text();
+            var map = new BMap.Map("allmap"); //实例化一个地图对象
+            var point = new
+            BMap.Point(116.331398, 39.897445); //设置地图中心的位置
+            map.centerAndZoom(point, 16);
+            //设置地图元素的可视层
+            map.enableScrollWheelZoom();
+            //启用滚轮放大缩小，默认禁用
+            map.enableContinuousZoom();
+            //启用地图惯性拖拽，默认禁用
+            var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function(r) {
+                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+//                    alert(r.address.province + ',' + r.address.city + ',' + r.address.district + ',' + r.address.street + ',' + r.address.street_number);
+                    var mk = new BMap.Marker(r.point);
+                    map.addOverlay(mk);
+                    map.panTo(r.point);
+                    //  http://api.map.baidu.com/direction?origin=latlng:34.264642646862,108.95108518068|name:我家&destination=大雁塔&mode=driving&region=西安&output=html&src=yourCompanyName|yourAppName
+                    location.href = "http://api.map.baidu.com/direction?origin=" + r.point.lng + "," + r.point.lat + "|name:" + r.address.city + r.address.district + r.address.street + r.address.street_number + "&destination="+dangqian_dizi+"&mode=driving&region=河南&output=html&src=yourCompanyName|yourAppName";
+                } else {
+                    alert('failed' + this.getStatus());
+                }
+            }, {
+                enableHighAccuracy: true
+            })
+        })
+
+    </script>
+</body>
+
+</html>

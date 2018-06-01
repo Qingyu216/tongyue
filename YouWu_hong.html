@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body style="height: 100%;">
+    <div data-role="page" class="wraper">
+        <div data-role="main" class="content notop" style="height: 100%;margin-bottom: 0rem;">
+            <div class="HongBao">
+                <p class="Hongbao_shuoming">规则说明</p>
+                <img src="./images/46.png">
+                <div class="Hongbao_btn"><img src="./images/47.png"></div>
+                <p><a href="" data-ajax="false">红包记录</a></p>
+            </div>
+        </div>
+        <div class="mark_down"></div>
+        <div class="shuoming_chaiBox">
+            <div class="shuoming_chai">
+                <div class="shuoming_chaiCon">每日凌晨5点之前，平台根据消费指数向积分持有会员自动发放不定额红包。会员当日首次登陆点击拆红包按钮可进行不定额度的领取红包。</div>
+                <div class="cancal"><img src="./images/39.png"></div>
+            </div>
+        </div>
+        <div class="huode_HongbaoBox">
+            <div class="huode_Hongbao">
+                <div class="cancal"><img src="./images/39.png"></div>
+                <p class="jine">￥<span>200</span></p>
+                <p class="gongxi">恭喜您获得200元红包</p>
+            </div>
+        </div>
+        <div class="no_HongbaoBox">
+            <div class="no_Hongbao">
+                <div class="cancal"><img src="./images/39.png"></div>
+                <p class="henyihan">今日无红包哦！</p>
+                <p class="mingrizailai">明日再来</p>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <a href="./index.html" data-ajax="false" class="home">
+                <span></span>
+                <p>首页</p>
+            </a>
+            <a href="./online_mall.html" data-ajax="false" class="online_mall">
+                <span></span>
+                <p>线上商城</p>
+            </a>
+            <a href="./hongbao.html" data-ajax="false" class="red_packet">
+                <span></span>
+                <p>红包</p>
+            </a>
+            <a href="./cart_food.html" data-ajax="false" class="shop_cart">
+                <span></span>
+                <p>购物车</p>
+            </a>
+            <a href="./my.html" data-ajax="false" class="my active">
+                <span></span>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        $(function() {
+            $('.Hongbao_shuoming').click(function() {
+                $('.shuoming_chaiBox').show();
+                $('.mark_down').show();
+                $('body').css({
+                    'overflow': 'hidden',
+                    'height': '100%'
+                });
+            });
+            $('.shuoming_chai .cancal').click(function() {
+                $(this).parent().parent().hide();
+                $('.mark_down').hide();
+                $('body').css({
+                    'overflow': 'auto',
+                    'height': 'auto'
+                });
+            });
+            $('.Hongbao_btn').click(function() {
+                //有红包用这个代码 
+                $('.huode_HongbaoBox').show();
+                $('.mark_down').show();
+                $('body').css({
+                    'overflow': 'hidden',
+                    'height': '100%'
+                });
+                
+                //无红包显示这个代码
+                $('.no_HongbaoBox').show();
+                $('.mark_down').show();
+                $('body').css({
+                    'overflow': 'hidden',
+                    'height': '100%'
+                });
+            });
+            $('.huode_HongbaoBox .cancal,.no_HongbaoBox .cancal').click(function() {
+                $(this).parent().parent().hide();
+                $('.mark_down').hide();
+                $('body').css({
+                    'overflow': 'auto',
+                    'height': 'auto'
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>
